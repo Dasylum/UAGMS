@@ -3,10 +3,13 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+<<<<<<< HEAD
 application-local.yml
 *.log
 node_modules/
 node/
+=======
+>>>>>>> 55378e6 (A very basic setup of User Management Service)
 
 ### STS ###
 .apt_generated
