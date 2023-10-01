@@ -14,7 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    private UUID user_id;
+    private UUID userId;
 
     private String user_name;
 
@@ -32,13 +32,8 @@ public class User {
     @Column(name = "is_deleted")
     private boolean is_deleted = false;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_groups",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "group_id")
-    )
-    private List<Group> groups;
+    @OneToMany(mappedBy = "user")
+    private List<UserGroup> groups;
 
     @PrePersist
     protected void onCreate() {
@@ -59,11 +54,11 @@ public class User {
     }
 
     public UUID getUser_id() {
-        return this.user_id;
+        return this.userId;
     }
 
     public void setUser_id(UUID user_id) {
-        this.user_id = user_id;
+        this.userId = user_id;
     }
 
     public String getUser_name() {
