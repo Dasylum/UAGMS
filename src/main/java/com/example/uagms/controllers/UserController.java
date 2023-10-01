@@ -15,8 +15,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @PostMapping(value = "/")
-//    public List<User> getUserGroups(@RequestBody UUID user_id, String user_name, String password) {
-//        return userService.getUserGroups();
-//    }
+    @GetMapping(value = "/")
+    public List<User> findAll() {
+        return userService.findAllUsers();
+    }
+
+    @PostMapping(value = "/new")
+    public User createAUser(@RequestBody User userInfo) {
+        User newUser = new User();
+        newUser.setUser_name(userInfo.getUser_name());
+        newUser.setUser_id(userInfo.getUser_id());
+
+        return userService.createUser(newUser);
+    }
 }

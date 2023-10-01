@@ -32,7 +32,7 @@ public class GroupController {
     }
 
     @GetMapping(value = "")
-    public String welcome() {
-        return "Welcome to the group's api";
+    public List<Group> getGroups() {
+        return groupService.findAllGroups();
     }
 }

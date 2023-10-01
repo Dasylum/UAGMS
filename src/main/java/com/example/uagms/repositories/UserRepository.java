@@ -11,5 +11,5 @@ import com.example.uagms.models.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {
-//    User findByUserId(UUID user_id);
+    User findByUserId(UUID userId);
 }

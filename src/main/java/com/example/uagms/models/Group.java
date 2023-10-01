@@ -24,8 +24,8 @@ public class Group {
 
     LocalDateTime updated_at;
 
-    @OneToMany(mappedBy = "groups")
-    private List<User> users;
+    @OneToMany(mappedBy = "group")
+    private List<UserGroup> users;
 
     public Group() {
         this.setIs_deleted(false);
