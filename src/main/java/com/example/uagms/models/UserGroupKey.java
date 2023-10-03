@@ -17,8 +17,13 @@ public class UserGroupKey implements Serializable {
     @Column(name = "user_id")
     UUID user_id;
 
+    public UserGroupKey(UUID user_id, UUID group_id) {
+        this.user_id = user_id;
+        this.group_id = group_id;
+    }
+
+    public UserGroupKey() {}
+
     @Column(name = "group_id")
     UUID group_id;
-
-
 }
